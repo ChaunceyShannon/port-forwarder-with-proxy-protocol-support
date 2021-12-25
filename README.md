@@ -1,6 +1,6 @@
 # port-forwarder-with-proxy-protocol-support
 
-For those who want to expose server as NodePort and can not get Client IP address, I wrote a small program to do some help.
+For those who want to expose service as NodePort and can not get Client IP address, I wrote a small program to do some help.
 
 Usage & Example
 
