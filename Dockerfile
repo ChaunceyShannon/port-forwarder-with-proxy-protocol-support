@@ -1,13 +1,3 @@
-FROM chaunceyshannon/cicd-tools:1.0.0 as statik-builder
-
-WORKDIR /app 
-
-COPY files/ files/
-
-RUN statik -src=files '-include=*' -f
-
-# --- 
-
 FROM golang:1.17.3-buster as golang-builder-base
 
 WORKDIR /src
@@ -24,7 +14,6 @@ WORKDIR /app
 
 COPY go.* ./
 COPY *.go ./
-COPY --from=statik-builder /app/statik ./statik/
 
 RUN --mount=type=cache,target=/root/.cache/go-build go build -o run
 
